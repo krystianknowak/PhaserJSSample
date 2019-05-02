@@ -1,5 +1,3 @@
-// import {Phaser} from 'phaser';
-
 class Example2 extends Phaser.Scene {
     constructor() {
         super({key: "Example2"});
@@ -8,7 +6,7 @@ class Example2 extends Phaser.Scene {
     create() {
         this.text = this.add.text(0,0, "Welcome to Example2!!", {font: "40px Impact"});
 
-        var tween = this.tweens.add({
+        const tween = this.tweens.add({
             targets: this.text,
             x:200,
             y:200,
@@ -22,5 +20,14 @@ class Example2 extends Phaser.Scene {
                 trgt[0].setColor("Cyan");
             }
         });
+
+        this.key_1 = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ONE);
+
+    }
+
+    update(delta) {
+        if (this.key_1.isDown) {
+            this.scene.start("Example1");
+        }
     }
 }

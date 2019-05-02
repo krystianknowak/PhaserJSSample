@@ -42,7 +42,11 @@ class Example1 extends Phaser.Scene {
             if(event.key == "2") {
                 this.scene.start("Example2");
             }
+            if(event.key == "3") {
+                this.scene.start("Example3");
+            }
         });
+
     }
 
     update(delta) {
